@@ -3,18 +3,18 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Contrato;
+use App\Models\Proprietario;
 use Illuminate\Http\Request;
 
-class ContratoController extends Controller
+class proprietarioController extends Controller
 {
-    private $contrato;
-    public function __construct(Contrato $contrato){
-        $this->contrato = $contrato;
+    private $proprietario;
+    public function __construct(proprietario $proprietario){
+        $this->proprietario = $proprietario;
     }
     public function index()
     {
-        return $this->contrato->all();
+        return $this->proprietario->all();
     }
 
 
@@ -26,12 +26,12 @@ class ContratoController extends Controller
                 'valor' => 'required | numeric | min:1.99'
             ]);
             return response()->json([
-                'Message'=> 'Contrato inserido com sucesso!',
-                'Contrato' => $this->contrato->create($request->all())
+                'Message'=> 'proprietario inserido com sucesso!',
+                'proprietario' => $this->proprietario->create($request->all())
             ]);
         } catch (\Exception $error){
             $responseError = [
-                'Erro' => "Erro ao inserir novo contrato",
+                'Erro' => "Erro ao inserir novo proprietario",
                 'Exception' => $error->getMessage()
             ];
             $statusHttp = 404;
@@ -40,23 +40,23 @@ class ContratoController extends Controller
     }
 
 
-    public function show(Contrato $contrato)
+    public function show(proprietario $proprietario)
     {
-        return $contrato;
+        return $proprietario;
     }
 
 
-    public function update(Request $request, Contrato $contrato)
+    public function update(Request $request, proprietario $proprietario)
     {
         try {
-            $contrato->update($request->all());
+            $proprietario->update($request->all());
             return response()->json([
-                "msg" => 'Contrato atualizado com sucesso',
-                "Contrato" => $contrato
+                "msg" => 'proprietario atualizado com sucesso',
+                "proprietario" => $proprietario
             ]);
         } catch (\Exception $error){
             $responseError = [
-                'Erro' => "Erro ao atualizar contrato",
+                'Erro' => "Erro ao atualizar proprietario",
                 'Exception' => $error->getMessage()
             ];
             $statusHttp = 404;
@@ -64,14 +64,14 @@ class ContratoController extends Controller
         }
     }
 
-    public function destroy(Contrato $contrato)
+    public function destroy(proprietario $proprietario)
     {
         try {
-            if($contrato->delete())
-            return response()->json(["Message"=>"Contrato removido com sucesso","Contrato"=>$contrato]);
+            if($proprietario->delete())
+            return response()->json(["Message"=>"proprietario removido com sucesso","proprietario"=>$proprietario]);
         } catch (\Exception $error){
             return response()->json([
-                'Erro' => "Erro ao excluir contrato",
+                'Erro' => "Erro ao excluir proprietario",
                 'Exception' => $error->getMessage()
             ], 404);
         }

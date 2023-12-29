@@ -12,11 +12,11 @@ class ImovelController extends Controller
 {
     public function index(Request $request){
         $perPage = $request->query('per_page');
-        $imovelsPaginated = Imovel::paginate($perPage);
-        $imovelsPaginated->appends([
+        $imoveisPaginated = Imovel::paginate($perPage);
+        $imoveisPaginated->appends([
             'per_page' => $perPage
         ]);
-        return response()->json($imovelsPaginated);
+        return response()->json($imoveisPaginated);
     }
 
     public function show($id){

@@ -3,18 +3,18 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Models\Cliente;
+use App\Models\Roommate;
 use Illuminate\Http\Request;
 
-class ClienteController extends Controller
+class RoommateController extends Controller
 {
-   private $cliente;
-   public function  __construct(Cliente $cliente){
-       $this->cliente = $cliente;
+   private $roommate;
+   public function  __construct(Roommate $roommate){
+       $this->roommate = $roommate;
    }
     public function index()
     {
-        return $this->cliente->all();
+        return $this->roommate->all();
     }
 
     /**
@@ -28,15 +28,15 @@ class ClienteController extends Controller
                 $statusHttp = 403;
                 throw new \Exception('voce nao tem permissao');
             }
-            $updatedCliente = $request->all();
-            $storedClient = Cliente::create($updatedCliente);
+            $updatedroommate = $request->all();
+            $storedClient = roommate::create($updatedroommate);
             return response()->json([
-                'Message'=> 'Cliente inserido com sucesso!',
-                'Cliente' => $this->cliente->create($request->all())
+                'Message'=> 'roommate inserido com sucesso!',
+                'roommate' => $this->roommate->create($request->all())
             ]);
         } catch (\Exception $error){
             $responseError = [
-                'Erro' => "Erro ao inserir novo cliente",
+                'Erro' => "Erro ao inserir novo roommate",
                 'Exception' => $error->getMessage()
             ];
             $statusHttp = 404;
@@ -47,26 +47,26 @@ class ClienteController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Cliente $cliente)
+    public function show(roommate $roommate)
     {
-        return $cliente;
+        return $roommate;
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Cliente $cliente)
+    public function update(Request $request, roommate $roommate)
     {
         try {
-            $cliente->update($request->all());
+            $roommate->update($request->all());
             return response()->json([
-                "msg" => "Cliente atualizado com sucesso!",
-                "Cliente" => $cliente
+                "msg" => "roommate atualizado com sucesso!",
+                "roommate" => $roommate
 
             ]);
         } catch (Exception $error){
             $responseError = [
-                'Erro' => "Erro ao atualizar cliente",
+                'Erro' => "Erro ao atualizar roommate",
                 'Exception' => $error->getMessage()
             ];
             $statusHttp = 404;
@@ -77,31 +77,31 @@ class ClienteController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Cliente $cliente)
+    public function destroy(roommate $roommate)
     {
         try {
-            if($cliente->delete())
-            return response()->json(["Message"=>"Cliente $cliente removido!"
-            ,"Cliente"=>$cliente]);
+            if($roommate->delete())
+            return response()->json(["Message"=>"roommate $roommate removido!"
+            ,"roommate"=>$roommate]);
 
         } catch (Exception $error) {
             return response()->json([
-                'Erro' => "Erro ao excluir cliente",
+                'Erro' => "Erro ao excluir roommate",
                 'Exception' => $error->getMessage()
             ], 404);
           }
     }
 
-    public function clientes(Cliente $cliente){
-        return response()->json($cliente->load('imovels'));
+    public function roommates(roommate $roommate){
+        return response()->json($roommate->load('imovels'));
     }
 
-    public function clientesContrato(Cliente $cliente){
+    public function roommatesContrato(roommate $roommate){
 
-        $clienteComContratoEImovel = $cliente->load('contratos.imovel');
+        $roommateComContratoEImovel = $roommate->load('contratos.imovel');
 
         return response()->json([
-            'clienteComContratoEImovel' => $clienteComContratoEImovel,
+            'roommateComContratoEImovel' => $roommateComContratoEImovel,
         ]);
     }
 }
