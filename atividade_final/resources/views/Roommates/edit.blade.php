@@ -18,7 +18,7 @@
             <td><input type="text" name="nome" value="{{$cliente->nome}}"/></td>
         </tr>
         <tr>
-            <td>Telefon:</td>
+            <td>Telefone:</td>
             <td><input type="text" name="telefone" value="{{$cliente->telefone}}"/></td>
         </tr>
         <tr>

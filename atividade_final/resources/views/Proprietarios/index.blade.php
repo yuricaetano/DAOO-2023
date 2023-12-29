@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Contratos</title>
+    <title>Lista de Proprietarios</title>
 </head>
 <body>
 <h1>Contratos - Quantidade Total de Contratos: {{$totalContratos}}</h1>
@@ -12,27 +12,27 @@
     <table>
         <thead>
         <tr>
-            <th>Descricao</th>
-            <th>Valor</th>
+            <th>Nome</th>
+            <th>Email</th>
         </tr>
         </thead>
         <tbody>
-        @foreach($listContratos as $contrato)
+        @foreach($listProprietarios as $proprietario)
             <tr>
-                <td><a href="/contrato/{{$contrato->id}}">{{$contrato->id}}</a></td>
-                <td>{{$contrato->descricao}}</td>
-                <td>{{$contrato->valor}}</td>
+                <td><a href="/proprietario/{{$proprietario->id}}">{{$proprietario->id}}</a></td>
+                <td>{{$proprietario->nome}}</td>
+                <td>{{$proprietario->email}}</td>
                 <td>
-                    <a href="{{route('contrato_edit', $contrato->id)}}">Editar</a>
-                    <a href="{{route('contrato_delete', $contrato->id)}}">Excluir</a>
+                    <a href="{{route('proprietario', $proprietario->id)}}">Editar</a>
+                    <a href="{{route('proprietario', $proprietario->id)}}">Excluir</a>
                 </td>
             </tr>
         @endforeach
         </tbody>
     </table>
 @else
-    <p>Contratos não encontrados! </p>
+    <p>Proprietarios não encontrados! </p>
 @endif
-<p><a href="{{route('contrato_create')}}">Novo Contrato</a></p>
+<p><a href="{{route('proprietario_create')}}">Novo Proprietario</a></p>
 </body>
 </html>

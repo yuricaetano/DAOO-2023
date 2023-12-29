@@ -5,30 +5,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Contrato</title>
+    <title>Lista de proprietario</title>
 </head>
 <body>
-@if ($contrato)
-    <h1>{{ $contrato->descricao }}</h1>
+@if ($proprietario)
+    <h1>{{ $proprietario->nome }}</h1>
     <ul>
-        <li>valor: {{ $contrato->valor}}</li>
+        <li>email: {{ $proprietario->email}}</li>
     </ul>
     <table>
         <tr>
             <td>
-                <form action="{{ route('contrato_remove',$contrato->id) }}" method='post'>
+                <form action="{{ route('proprietario_remove',$proprietario->id) }}" method='post'>
                     @csrf
                     <input type="submit" name='confirmar' value="Remover" />
                 </form>
             </td>
             <td>
-                <a href="/contratos"><button>Cancelar</button></a>
+                <a href="/proprietarios"><button>Cancelar</button></a>
             </td>
         </tr>
     </table>
 @else
     <p>Contratos não encontrados! </p>
 @endif
-<a href="/Contratos">&#9664;Voltar</a>
+<a href="/Proprietarios">&#2b58de;Voltar</a>
 </body>
 </html>
