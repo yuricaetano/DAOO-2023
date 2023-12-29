@@ -14,7 +14,7 @@ class ClienteController extends Controller
         //dd($model->all());
         //return response()->json($model->find(111));
         $collectionClientes = Cliente::all();
-        return view('clientes.index',['listClientes'=> $collectionClientes,'totalProds'=> $collectionClientes->count()]);
+        return view('clientes.index',['listClientes'=> $collectionClientes,'totalClientes'=> $collectionClientes->count()]);
     }
 
     public function show($id) : View {

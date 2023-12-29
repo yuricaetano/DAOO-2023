@@ -15,6 +15,7 @@
     <table>
         <tr>
             <td>Rua:</td>
+            <!--DEVERIA TRAZER OS DADOS DO BANCO NA EDIÇÃO-->
             <td><input type="text" name="rua"/></td>
         </tr>
         <tr>
