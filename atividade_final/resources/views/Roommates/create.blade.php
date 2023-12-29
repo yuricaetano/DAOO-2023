@@ -9,8 +9,8 @@
 </head>
 
 <body>
-<h1>Insert new Cliente</h1>
-<form action="/cliente" method="POST">
+<h1>Inserir novo Roommate</h1>
+<form action="/roommate" method="POST">
     @csrf
     {{-- <input type="hidden" name="_token" value="{{csrf_token()}}"/> --}}
     <table>
@@ -34,7 +34,7 @@
             <td colspan="2"><input type="submit" value="Criar"/></td>
         </tr>
         <tr align="center">
-            <td colspan="2"><a href="/Cliente" style="display: inline">&#9664;&nbsp;Voltar</a></td>
+            <td colspan="2"><a href="/Cliente" style="display: inline">&#2b58de;&nbsp;Voltar</a></td>
         </tr>
     </table>
 </form>

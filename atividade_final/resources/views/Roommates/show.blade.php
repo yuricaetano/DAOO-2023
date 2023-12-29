@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Clientes</title>
+    <title>Lista de Roommates</title>
 </head>
 <body>
-<h1>Clientes</h1>
-@if ($cliente)
+<h1>Roommates</h1>
+@if ($roommate)
     <table>
         <thead>
         <tr>
@@ -22,18 +22,18 @@
         </thead>
         <tbody>
             <tr>
-                <td>{{$cliente->id}}</td>
-                <td>{{$cliente->nome}}</td>
-                <td>{{$cliente->telefone}}</td>
-                <td>{{$cliente->cpf}}</td>
-                <td>{{$cliente->email}}</td>
+                <td>{{$roommate->id}}</td>
+                <td>{{$roommate->nome}}</td>
+                <td>{{$roommate->telefone}}</td>
+                <td>{{$roommate->cpf}}</td>
+                <td>{{$roommate->email}}</td>
             </tr>
         </tbody>
     </table>
 @else
-    <p>Clientes não encontrado! </p>
+    <p>Roommates não encontrado! </p>
 @endif
 
-<a href="/clientes">Voltar</a>
+<a href="/roommates">Voltar</a>
 </body>
 </html>

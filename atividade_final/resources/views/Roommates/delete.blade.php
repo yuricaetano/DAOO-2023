@@ -5,33 +5,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Produtos</title>
+    <title>Lista de Roommate</title>
 </head>
 <body>
-@if ($cliente)
-    <h1>{{ $cliente->nome }}</h1>
+@if ($roommate)
+    <h1>{{ $roommate->nome }}</h1>
     <ul>
-        <li>Nome: {{ $cliente->nome}}</li>
-        <li>Telefone: {{ $cliente->telefone}}</li>
-        <li>Cpf: {{ $cliente->cpf}}</li>
-        <li>Email: {{ $cliente->email}}</li>
+        <li>Nome: {{ $roommate->nome}}</li>
+        <li>Telefone: {{ $roommate->telefone}}</li>
+        <li>Cpf: {{ $roommate->cpf}}</li>
+        <li>Email: {{ $roommate->email}}</li>
     </ul>
     <table>
         <tr>
             <td>
-                <form action="{{ route('cliente_remove',$cliente->id) }}" method='post'>
+                <form action="{{ route('roommate_remove',$roommate->id) }}" method='post'>
                     @csrf
                     <input type="submit" name='confirmar' value="Remover" />
                 </form>
             </td>
             <td>
-                <a href="/clientes"><button>Cancelar</button></a>
+                <a href="/roommates"><button>Cancelar</button></a>
             </td>
         </tr>
     </table>
 @else
-    <p>Clientes não encontrados! </p>
+    <p>Roommates não encontrados! </p>
 @endif
-<a href="/Clientes">&#9664;Voltar</a>
+<a href="/Roommates">&#2b58de;Voltar</a>
 </body>
 </html>

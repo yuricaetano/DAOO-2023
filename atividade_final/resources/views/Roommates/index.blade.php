@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Clientes</title>
+    <title>Lista de Roommates</title>
 </head>
 <body>
-<h1>Clientes - Quantidade Total de Clientes: {{$totalProds}}</h1>
-@if ($listClientes->count()>0)
+<h1>Roommates - Quantidade Total de Roommates: {{$totalProds}}</h1>
+@if ($listRoommates->count()>0)
     <table>
         <thead>
         <tr>
@@ -19,24 +19,24 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($listClientes as $cliente)
+        @foreach($listRoommates as $roommate)
             <tr>
-                <td><a href="/cliente/{{$cliente->id}}">{{$cliente->id}}</a></td>
-                <td>{{$cliente->nome}}</td>
-                <td>{{$cliente->telefone}}</td>
-                <td>{{$cliente->cpf}}</td>
-                <td>{{$cliente->email}}</td>
+                <td><a href="/roommate/{{$roommate->id}}">{{$roommate->id}}</a></td>
+                <td>{{$roommate->nome}}</td>
+                <td>{{$roommate->telefone}}</td>
+                <td>{{$roommate->cpf}}</td>
+                <td>{{$roommate->email}}</td>
                 <td>
-                    <a href="{{route('cliente_edit', $cliente->id)}}">Editar</a>
-                    <a href="{{route('cliente_delete', $cliente->id)}}">Excluir</a>
+                    <a href="{{route('roommate_edit', $roommate->id)}}">Editar</a>
+                    <a href="{{route('roommate_delete', $roommate->id)}}">Excluir</a>
                 </td>
             </tr>
         @endforeach
         </tbody>
     </table>
 @else
-    <p>Clientes não encontrados! </p>
+    <p>Roommate não encontrados! </p>
 @endif
-<p><a href="{{route('cliente_create')}}">Novo cliente</a></p>
+<p><a href="{{route('roommate_create')}}">Novo roommate</a></p>
 </body>
 </html>
