@@ -22,8 +22,8 @@
         @foreach($listClientes as $cliente)
             <tr>
                 <td><a href="/cliente/{{$cliente->id}}">{{$cliente->id}}</a></td>
-                <td>{{$atleta->nome}}</td>
-                <td>{{$atleta->email}}</td>
+                <td>{{$cliente->nome}}</td>
+                <td>{{$cliente->email}}</td>
                 <td>
                     <a href="{{route('cliente_edit', $cliente->id)}}">Editar</a>
                     <a href="{{route('cliente_delete', $cliente->id)}}">Excluir</a>
