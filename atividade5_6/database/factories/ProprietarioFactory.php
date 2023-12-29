@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class ContratoFactory extends Factory
+class ProprietarioFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -17,9 +17,8 @@ class ContratoFactory extends Factory
     public function definition(): array
     {
         return [
-            "descricao" => fake()->text(30),
-            "valor" => fake()->randomFloat(2,2,2000),
-            "cliente_id" => fake()->numberBetween(1,10),
+            "nome" => fake()->text(30),
+            "email" => fake()->text(30),
             "imovel_id" => fake()->numberBetween(1, 10),
         ];
     }
