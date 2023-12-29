@@ -27,8 +27,8 @@ Route::middleware(['auth:sanctum', 'role:admin'])->group(function () {
         'users' => 'user'
     ]);
 
-    Route::apiResource('imovels', \App\Http\Controllers\Api\ImovelController::class)->parameters([
-        'imovels' => 'imovel'
+    Route::apiResource('imoveis', \App\Http\Controllers\Api\ImovelController::class)->parameters([
+        'imoveis' => 'imovel'
     ]);
 
     Route::post('logout', [\App\Http\Controllers\Api\LoginController::class, 'logout']);
@@ -38,8 +38,8 @@ Route::middleware(['auth:sanctum', 'role:admin'])->group(function () {
 Route::middleware(['auth:sanctum', 'role:manager'])->group(function () {
 
 
-    Route::apiResource('contratos', \App\Http\Controllers\Api\ContratoController::class)->parameters([
-        'contratos' => 'contrato'
+    Route::apiResource('proprietarios', \App\Http\Controllers\Api\ProprietarioController::class)->parameters([
+        'proprietarios' => 'proprietario'
     ]);
 
     Route::post('logout', [\App\Http\Controllers\Api\LoginController::class, 'logout']);
@@ -49,11 +49,11 @@ Route::middleware(['auth:sanctum', 'role:manager'])->group(function () {
 Route::middleware(['auth:sanctum', 'role:client, admin'])->group(function () {
 
 
-    Route::controller(\App\Http\Controllers\Api\ClienteController::class)->group(function (){
-        Route::get('clientes', 'index');
-        Route::get('clientes/{cliente}', 'show');
-        Route::get('clientes/{cliente}/imovels', [\App\Http\Controllers\Api\ClienteController::class, 'clientes'])->name('clientes.imovels');
-        Route::get('clientes/{cliente}/contratos', [\App\Http\Controllers\Api\ClienteController::class, 'clientesContrato'])->name('clientes.contratos');
+    Route::controller(\App\Http\Controllers\Api\RoommateController::class)->group(function (){
+        Route::get('roommates', 'index');
+        Route::get('roommates/{roommate}', 'show');
+        Route::get('roommates/{roommate}/imoveis', [\App\Http\Controllers\Api\RoommateController::class, 'roommates'])->name('roommates.imoveis');
+        Route::get('roommates/{roommate}/proprietarios', [\App\Http\Controllers\Api\RoommateController::class, 'roommatesContrato'])->name('roommates.contratos');
 
     });
     Route::put('/users/{user}', [\App\Http\Controllers\Api\UserController::class, 'update']);
