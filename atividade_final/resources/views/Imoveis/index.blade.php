@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Imovels</title>
+    <title>Lista de Imoveis</title>
 </head>
 <body>
 <h1>Imovels - Quantidade Total de Imovels: {{$totalProds}}</h1>
@@ -34,7 +34,7 @@
         </tbody>
     </table>
 @else
-    <p>Imovels não encontrados! </p>
+    <p>Imoveis não encontrados! </p>
 @endif
 <p><a href="{{route('imovel_create')}}">Novo imovel</a></p>
 </body>
