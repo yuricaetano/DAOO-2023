@@ -14,7 +14,7 @@ class ImovelController extends Controller
         //dd($model->all());
         //return response()->json($model->find(111));
         $collectionImovels = Imovel::all();
-        return view('imovels.index',['listImovels'=> $collectionImovels,'totalProds'=> $collectionImovels->count()]);
+        return view('imovels.index',['listImovels'=> $collectionImovels,'totalImovels'=> $collectionImovels->count()]);
     }
 
     public function show($id) : View {
