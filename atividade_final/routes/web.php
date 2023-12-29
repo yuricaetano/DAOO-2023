@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route:: get('imovels', [\App\Http\Controllers\ImovelController::class, 'index']);
+Route:: get('imoveis', [\App\Http\Controllers\ImovelController::class, 'index']);
 Route:: get('imovel/{id}', [\App\Http\Controllers\ImovelController::class, 'show']);
 Route:: get('imovel', [\App\Http\Controllers\ImovelController::class, 'create'])-> name('imovel_create');
 Route:: post('imovel', [\App\Http\Controllers\ImovelController::class, 'store']);
@@ -26,20 +26,20 @@ Route:: post('imovel/{id}/update', [\App\Http\Controllers\ImovelController::clas
 Route:: get('imovel/{id}/delete', [\App\Http\Controllers\ImovelController::class, 'delete'])-> name('imovel_delete');
 Route:: post('imovel/{id}/remove', [\App\Http\Controllers\ImovelController::class, 'remove'])-> name('imovel_remove');
 
-Route:: get('clientes', [\App\Http\Controllers\ClienteController::class, 'index']);
-Route:: get('cliente/{id}', [\App\Http\Controllers\ClienteController::class, 'show']);
-Route:: get('cliente', [\App\Http\Controllers\ClienteController::class, 'create'])-> name('cliente_create');
-Route:: post('cliente', [\App\Http\Controllers\ClienteController::class, 'store']);
-Route:: get('cliente/{id}/edit', [\App\Http\Controllers\ClienteController::class, 'edit'])-> name('cliente_edit');
-Route:: post('cliente/{id}/update', [\App\Http\Controllers\ClienteController::class, 'update'])-> name('cliente_update');
-Route:: get('cliente/{id}/delete', [\App\Http\Controllers\ClienteController::class, 'delete'])-> name('cliente_delete');
-Route:: post('cliente/{id}/remove', [\App\Http\Controllers\ClienteController::class, 'remove'])-> name('cliente_remove');
+Route:: get('roommates', [\App\Http\Controllers\RoommateController::class, 'index']);
+Route:: get('roommate/{id}', [\App\Http\Controllers\RoommateController::class, 'show']);
+Route:: get('roommate', [\App\Http\Controllers\RoommateController::class, 'create'])-> name('roommate_create');
+Route:: post('roommate', [\App\Http\Controllers\RoommateController::class, 'store']);
+Route:: get('roommate/{id}/edit', [\App\Http\Controllers\RoommateController::class, 'edit'])-> name('roommate_edit');
+Route:: post('roommate/{id}/update', [\App\Http\Controllers\RoommateController::class, 'update'])-> name('roommate_update');
+Route:: get('roommate/{id}/delete', [\App\Http\Controllers\RoommateController::class, 'delete'])-> name('roommate_delete');
+Route:: post('roommate/{id}/remove', [\App\Http\Controllers\RoommateController::class, 'remove'])-> name('roommate_remove');
 
-Route:: get('contratos', [\App\Http\Controllers\ContratoController::class, 'index']);
-Route:: get('contrato/{id}', [\App\Http\Controllers\ContratoController::class, 'show']);
-Route:: get('contrato', [\App\Http\Controllers\ContratoController::class, 'create'])-> name('contrato_create');
-Route:: post('contrato', [\App\Http\Controllers\ContratoController::class, 'store']);
-Route:: get('contrato/{id}/edit', [\App\Http\Controllers\ContratoController::class, 'edit'])-> name('contrato_edit');
-Route:: post('contrato/{id}/update', [\App\Http\Controllers\ContratoController::class, 'update'])-> name('contrato_update');
-Route:: get('contrato/{id}/delete', [\App\Http\Controllers\ContratoController::class, 'delete'])-> name('contrato_delete');
-Route:: post('contrato/{id}/remove', [\App\Http\Controllers\ContratoController::class, 'remove'])-> name('contrato_remove');
+Route:: get('proprietarios', [\App\Http\Controllers\ProprietarioController::class, 'index']);
+Route:: get('proprietario/{id}', [\App\Http\Controllers\ProprietarioController::class, 'show']);
+Route:: get('proprietario', [\App\Http\Controllers\ProprietarioController::class, 'create'])-> name('proprietario_create');
+Route:: post('proprietario', [\App\Http\Controllers\ProprietarioController::class, 'store']);
+Route:: get('proprietario/{id}/edit', [\App\Http\Controllers\ProprietarioController::class, 'edit'])-> name('proprietario_edit');
+Route:: post('proprietario/{id}/update', [\App\Http\Controllers\ProprietarioController::class, 'update'])-> name('proprietario_update');
+Route:: get('proprietario/{id}/delete', [\App\Http\Controllers\ProprietarioController::class, 'delete'])-> name('proprietario_delete');
+Route:: post('proprietario/{id}/remove', [\App\Http\Controllers\ProprietarioController::class, 'remove'])-> name('proprietario_remove');
