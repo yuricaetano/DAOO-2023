@@ -10,23 +10,23 @@ class Imovel extends Model
     use HasFactory;
     protected $fillable =['rua', 'numero', 'cidade', 'cliente_id'];
 
-    public function cliente(){
+    public function roommate(){
         return $this->belongsTo(Cliente::class);
     }
-    public function contrato(){
-        return $this->hasOne(Contrato::class);
+    public function proprietario(){
+        return $this->hasOne(Proprietario::class);
     }
 
     public static function imoveisPorRua()
     {
         return self::orderBy('rua', 'asc')->get();
     }
-    public static function totalImoveisPorCliente()
+    public static function totalImoveisPorRoommate()
     {
-        return self::with('cliente')
-        ->select('cliente_id')
+        return self::with('roommate')
+        ->select('roommate_id')
             ->selectRaw('COUNT(*) as total_imoveis')
-            ->groupBy('cliente_id')
+            ->groupBy('roommate_id')
             ->get();
     }
     public static function totalImoveisPorCidade()
