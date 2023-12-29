@@ -13,16 +13,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-//        // \App\Models\User::factory(10)->create();
-//        \App\Models\Cliente::factory(10)->create();
-//        \App\Models\Imovel::factory(10)->create();
-//        \App\Models\Contrato::factory(10)->create();
-//        \App\Models\User::factory(3)->create();
         $this->call([
             UserAdminSeeder::class,
-            ClienteSeeder::class,
+            RoommateSeeder::class,
             ImovelSeeder::class,
-            ContratoSeeder::class,
+            ProprietarioSeeder::class,
         ]);
     }
 }
